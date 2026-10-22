@@ -1,0 +1,124 @@
+.dashboard {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 20px 108px;
+}
+
+.month-label,
+.budget-card p,
+.section h2,
+.budget-label,
+.remaining {
+  color: var(--mg-neutral);
+}
+
+.month-label {
+  margin: 0 0 4px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+h1 {
+  margin: 0 0 16px;
+  color: var(--mg-carbon);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.budget-card {
+  margin: 0 0 26px;
+  border-radius: 18px;
+  background: var(--mg-carbon);
+  color: var(--mg-white);
+}
+
+.budget-card p {
+  margin: 0;
+  color: rgb(255 255 255 / 70%);
+  font-size: 12px;
+}
+
+.monthly-total {
+  display: block;
+  margin: 2px 0 14px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.budget-label,
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.budget-label {
+  margin-bottom: 8px;
+  color: rgb(255 255 255 / 78%);
+  font-size: 12px;
+}
+
+.budget-progress {
+  height: 8px;
+  border-radius: 8px;
+  --background: rgb(255 255 255 / 20%);
+  --progress-background: var(--mg-emerald);
+}
+
+.section {
+  margin: 0 0 24px;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.category-row {
+  display: grid;
+  grid-template-columns: 22px 84px minmax(48px, 1fr) 60px;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0;
+  color: var(--mg-carbon);
+  font-size: 12px;
+}
+
+.category-row ion-progress-bar {
+  height: 7px;
+  border-radius: 8px;
+  --background: rgb(107 114 128 / 18%);
+  --progress-background: var(--mg-emerald);
+}
+
+.expense-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin-right: 12px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mg-light);
+  color: var(--mg-carbon);
+  font-size: 18px;
+}
+
+ion-label p {
+  color: var(--mg-neutral);
+  font-size: 11px;
+}
+
+.category-row strong,
+.expense-amount {
+  color: var(--mg-carbon);
+  font-size: 12px;
+}
+
+ion-label h3 {
+  color: var(--mg-carbon);
+  font-size: 13px;
+  font-weight: 600;
+}

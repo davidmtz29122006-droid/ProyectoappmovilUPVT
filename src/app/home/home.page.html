@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button aria-label="Abrir menú"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mis Gastos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="dashboard">
+    <p class="month-label">{{ monthLabel }}</p>
+    <h1>Hola, María</h1>
+
+    <ion-card class="budget-card">
+      <ion-card-content>
+        <p>Gasto total del mes</p>
+        <strong class="monthly-total">{{ monthlyTotal() | currency:'MXN':'symbol-narrow':'1.0-0' }}</strong>
+        <div class="budget-label">
+          <span>Presupuesto mensual</span>
+          <span>{{ store.monthlyBudget | currency:'MXN':'symbol-narrow':'1.0-0' }}</span>
+        </div>
+        <ion-progress-bar
+          class="budget-progress"
+          [value]="budgetProgress()"
+          aria-label="Porcentaje del presupuesto utilizado">
+        </ion-progress-bar>
+        <p class="remaining">
+          Quedan {{ remainingBudget() | currency:'MXN':'symbol-narrow':'1.0-0' }} disponibles
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <section class="section" aria-labelledby="categories-title">
+      <h2 id="categories-title">Por categoría</h2>
+      @for (category of categories(); track category.name) {
+        <div class="category-row">
+          <ion-icon [name]="category.icon" aria-hidden="true"></ion-icon>
+          <span class="category-name">{{ category.name }}</span>
+          <ion-progress-bar [value]="category.progress" aria-hidden="true"></ion-progress-bar>
+          <strong>{{ category.amount | currency:'MXN':'symbol-narrow':'1.0-0' }}</strong>
+        </div>
+      }
+    </section>
+
+    <section class="section recent-section" aria-labelledby="recent-title">
+      <div class="section-heading">
+        <h2 id="recent-title">Últimos movimientos</h2>
+        <span>Este mes</span>
+      </div>
+      <ion-list lines="none">
+        @for (expense of recentExpenses(); track expense.description) {
+          <ion-item>
+            <span class="expense-icon" slot="start">
+              <ion-icon [name]="categoryIcon(expense.category)" aria-hidden="true"></ion-icon>
+            </span>
+            <ion-label>
+              <h3>{{ expense.description }}</h3>
+              <p>{{ expense.category }} · {{ expense.dateLabel }}</p>
+            </ion-label>
+            <strong class="expense-amount">
+              −{{ expense.amount | currency:'MXN':'symbol-narrow':'1.0-0' }}
+            </strong>
+          </ion-item>
+        }
+      </ion-list>
+    </section>
+  </main>
+
+</ion-content>

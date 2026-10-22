@@ -1,0 +1,139 @@
+ion-toolbar {
+  --background: var(--mg-white);
+  --color: var(--mg-carbon);
+}
+
+.expense-form {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.amount-card {
+  display: grid;
+  justify-items: center;
+  margin: 0 0 22px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: var(--mg-white);
+}
+
+.amount-card > ion-label,
+.currency {
+  color: var(--mg-neutral);
+  font-size: 12px;
+}
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  color: var(--mg-carbon);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.amount-input ion-input {
+  width: 180px;
+  --padding-start: 4px;
+  --padding-end: 4px;
+  --padding-top: 4px;
+  --padding-bottom: 4px;
+  --color: var(--mg-carbon);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-field {
+  display: block;
+  margin: 0 0 20px;
+  --border-radius: 12px;
+  --highlight-color-focused: var(--mg-emerald);
+}
+
+.form-field::part(label) {
+  margin-bottom: 8px;
+  color: var(--mg-neutral);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.category-field {
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+}
+
+.category-field legend {
+  margin-bottom: 12px;
+  color: var(--mg-neutral);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 8px;
+}
+
+.category-option {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  padding: 0;
+  background: transparent;
+  color: var(--mg-neutral);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.category-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mg-light);
+  color: var(--mg-carbon);
+  font-size: 19px;
+}
+
+.category-option.selected {
+  color: var(--mg-carbon);
+  font-weight: 600;
+}
+
+.category-option.selected .category-icon {
+  background: var(--mg-carbon);
+  color: var(--mg-white);
+}
+
+.notes-field {
+  min-height: 86px;
+}
+
+.form-error {
+  display: block;
+  margin: -8px 0 12px;
+}
+
+.save-button {
+  margin-top: 4px;
+  --border-radius: 12px;
+  --background: var(--mg-carbon);
+  --background-activated: #111827;
+  --color: var(--mg-white);
+  font-weight: 600;
+}
+
+.cancel-button {
+  margin-top: 4px;
+  --color: var(--mg-neutral);
+}

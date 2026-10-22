@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-menu contentId="main-content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Mis Gastos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle autoHide="true">
+          <ion-item routerLink="/login" routerLinkActive="menu-active">
+            <ion-label>Iniciar sesión</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="true">
+          <ion-item routerLink="/home" routerLinkActive="menu-active">
+            <ion-label>Inicio</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="true">
+          <ion-item routerLink="/expense" routerLinkActive="menu-active">
+            <ion-label>Agregar gasto</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

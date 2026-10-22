@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button aria-label="Abrir menú"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar gasto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="expense-form">
+    <form (ngSubmit)="saveExpense()">
+      <section class="amount-card" aria-label="Monto del gasto">
+        <ion-label for="amount">Monto</ion-label>
+        <div class="amount-input">
+          <span>$</span>
+          <ion-input
+            id="amount"
+            name="amount"
+            type="number"
+            inputmode="decimal"
+            min="0.01"
+            step="0.01"
+            placeholder="0.00"
+            [(ngModel)]="amount"
+            required>
+          </ion-input>
+        </div>
+        <span class="currency">MXN</span>
+      </section>
+
+      <ion-input
+        class="form-field"
+        label="Descripción"
+        labelPlacement="stacked"
+        fill="outline"
+        name="description"
+        placeholder="Ej. Supermercado, gasolina..."
+        [(ngModel)]="description"
+        required>
+      </ion-input>
+
+      <fieldset class="category-field">
+        <legend>Categoría</legend>
+        <div class="category-grid">
+          @for (category of categories; track category.name) {
+            <button
+              class="category-option"
+              type="button"
+              [class.selected]="selectedCategory === category.name"
+              [attr.aria-pressed]="selectedCategory === category.name"
+              (click)="selectedCategory = category.name">
+              <span class="category-icon">
+                <ion-icon [name]="category.icon" aria-hidden="true"></ion-icon>
+              </span>
+              <span>{{ category.name }}</span>
+            </button>
+          }
+        </div>
+      </fieldset>
+
+      <ion-input
+        class="form-field"
+        label="Fecha"
+        labelPlacement="stacked"
+        fill="outline"
+        name="date"
+        type="date"
+        [(ngModel)]="date"
+        required>
+      </ion-input>
+
+      <ion-textarea
+        class="form-field notes-field"
+        label="Notas (opcional)"
+        labelPlacement="stacked"
+        fill="outline"
+        name="notes"
+        placeholder="Agrega una nota..."
+        autoGrow="true"
+        [(ngModel)]="notes">
+      </ion-textarea>
+
+      @if (errorMessage) {
+        <ion-note class="form-error" color="danger" role="alert">{{ errorMessage }}</ion-note>
+      }
+
+      <ion-button class="save-button" expand="block" type="submit">Guardar gasto</ion-button>
+      <ion-button class="cancel-button" expand="block" fill="clear" routerLink="/home">
+        Cancelar
+      </ion-button>
+    </form>
+  </main>
+</ion-content>

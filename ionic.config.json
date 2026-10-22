@@ -1,0 +1,7 @@
+{
+  "name": "Proyecto U2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,87 @@
+.login-shell {
+  display: flex;
+  min-height: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-mark {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 18px;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--mg-emerald);
+  color: var(--mg-white);
+  font-size: 34px;
+}
+
+h1 {
+  margin: 0;
+  color: var(--mg-carbon);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.tagline {
+  margin: 8px 0 28px;
+  color: var(--mg-neutral);
+  font-size: 14px;
+}
+
+.login-card {
+  width: 100%;
+  margin: 0;
+  border-radius: 18px;
+  background: var(--mg-white);
+  box-shadow: 0 8px 28px rgb(31 41 55 / 6%);
+}
+
+.login-card ion-card-content {
+  padding: 24px 20px;
+}
+
+ion-input {
+  margin-bottom: 18px;
+  --border-radius: 12px;
+  --highlight-color-focused: var(--mg-emerald);
+}
+
+ion-input::part(label) {
+  margin-bottom: 8px;
+  color: var(--mg-carbon);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.password-input {
+  margin-bottom: 24px;
+}
+
+.login-button {
+  --border-radius: 12px;
+  --background: var(--mg-emerald);
+  --color: var(--mg-white);
+  font-weight: 600;
+}
+
+.guest-button {
+  margin-top: 12px;
+  --border-radius: 12px;
+  --border-color: var(--mg-carbon);
+  --color: var(--mg-carbon);
+}
+
+.demo-note {
+  margin-top: 18px;
+  color: var(--mg-neutral);
+  font-size: 11px;
+}
